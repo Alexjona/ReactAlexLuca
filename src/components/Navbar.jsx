@@ -13,9 +13,9 @@ return (
 <br />
 <Link to="/category/Consolas"> Consolas</Link>
 <br />
-<Link to="/category/cart"> Cart</Link>
+<Link to="/cart"> Cart</Link>
 <br />
-<Link to="/category/checkout"> Checkout</Link>
+<Link to="/checkout"> Checkout</Link>
 <br />
 <CartWidget/>
 <br />

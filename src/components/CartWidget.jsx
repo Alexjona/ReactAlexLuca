@@ -1,10 +1,10 @@
-import React,{useContext,useEffect} from 'react';
+import React,{useContext} from 'react';
 import {cartContext} from "../CartContextComponent";
 
 export default function CartWidget() {
-    const {cart,total} = useContext(cartContext)
+    const {totalCount} = useContext(cartContext)
 
 return (
-    <div>🛒({total})</div>
-  )
+  <div>🛒 {totalCount}</div>
+)
 }

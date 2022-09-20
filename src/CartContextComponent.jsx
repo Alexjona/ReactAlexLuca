@@ -26,20 +26,28 @@ export default function CartContextComponent({children}) {
     setCart(cartAux);
     }
 
+
+
     function deleteFromCart(id) {
-        setCart(cart.filter(( item) => item.id !== id));
+        setCart(cart.filter((item) => item.id !== id));
         }
 
+    function deleteAllFromCart(){
+        setCart([]);
+    }
 
     useEffect(() => {
         setTotalCount(cart.reduce((acc, item) => acc + item.count, 0));
-        setTotalToPay(cart.reduce((acc, item) => acc + item.count, 0));
+        setTotalToPay(cart.reduce((acc, item) => acc + item.count * item.price, 0));
         }, [cart]);
 
 
     return (
-        <cartContext.Provider value={{ cart, addToCart, totalCount, totalToPay, deleteFromCart}}>
+ 
+        <cartContext.Provider value={{ cart, addToCart, totalCount, totalToPay, deleteFromCart,deleteAllFromCart} }>
         {children}
         </cartContext.Provider>
+
+        
         );
 }
